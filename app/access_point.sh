@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #Initial wifi interface configuration
 ifconfig $1 up 10.0.0.1 netmask 255.255.255.0
 sleep 2
