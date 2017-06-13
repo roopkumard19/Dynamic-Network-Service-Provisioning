@@ -7,14 +7,10 @@ RUN apt-get -q update \
         	git \
 		hostapd \
 		dnsmasq \
-		ifconfig \
-		iptables \
 
 WORKDIR /usr/src/app
 
 COPY app/ /usr/src/app
-
-CMD ["/bin/bash"]
 
 CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"]
 
