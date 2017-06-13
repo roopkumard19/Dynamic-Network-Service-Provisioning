@@ -24,4 +24,4 @@ CMD ["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
 
 CMD ["chmod", "+x", "/usr/src/app/access_point.sh"]
 
-CMD ["/access_point.sh", "wlan1", "wlan0"]
+ENTRYPOINT ["/usr/src/app/access_point.sh", "wlan1", "wlan0"]
