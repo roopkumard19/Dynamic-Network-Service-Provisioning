@@ -24,4 +24,4 @@ CMD ["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
 
 CMD ["chmod", "+x", "/usr/src/app/access_point.sh"]
 
-RUN /usr/src/app/access_point.sh wlan1 wlan0
+CMD ["sudo", "/usr/src/app/access_point.sh", "wlan1", "wlan0"]
