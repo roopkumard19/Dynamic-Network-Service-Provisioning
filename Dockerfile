@@ -16,4 +16,5 @@ RUN pip install paho-mqtt
 WORKDIR /usr/src/app
 
 COPY app/ /usr/src/app
-CMD ["python", "/usr/src/app/main.py"]
+CMD ["/bin/bash"]
+CMD ["echo", "Hello World!"]
