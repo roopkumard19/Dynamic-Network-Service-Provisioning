@@ -22,6 +22,6 @@ CMD ["cp", "hostapd-config", "/etc/hostapd/hostapd.conf"]
 
 CMD ["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
 
-CMD ["chmod", "+x", "/usr/src/app/access_point.sh"]
+RUN chmod +x /usr/src/app/app.sh
 
-ENTRYPOINT ["/usr/src/app/access_point.sh", "wlan1", "wlan0"]
+CMD ["/usr/src/app/app.sh"]
