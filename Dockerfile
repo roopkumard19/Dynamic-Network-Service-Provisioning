@@ -6,7 +6,7 @@ RUN apt-get -q update \
 		curl \
         	git \
 		hostapd \
-		dnsmasq \
+		dnsmasq
 
 WORKDIR /usr/src/app
 
