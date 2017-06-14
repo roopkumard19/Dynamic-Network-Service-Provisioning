@@ -8,8 +8,9 @@ RUN apt-get -q update \
 		hostapd \
 		dnsmasq \
 		openssh-server \
-		wireless-tools \
-		iptables
+		net-tools \
+		iptables \
+		psmisc
 
 WORKDIR /usr/src/app
 
