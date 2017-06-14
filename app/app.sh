@@ -4,10 +4,10 @@ ifconfig $1 up 10.0.0.1 netmask 255.255.255.0
 sleep 2
  
 ###########Start dnsmasq, modify if required##########
-if [ -z "$(ps -e | grep dnsmasq)" ]
+if [ -z "$(ps -e | grep dnsmasq-base)" ]
 then
  echo im here
- dnsmasq
+ dnsmasq-base
 fi
 ###########
  
