@@ -8,8 +8,8 @@ RUN apt-get -q update \
 		hostapd \
 		dnsmasq \
 		openssh-server \
-		apt-get install wireless-tools \
-		apt-get install iptables
+		wireless-tools \
+		iptables
 
 WORKDIR /usr/src/app
 
@@ -17,11 +17,11 @@ COPY app/ /usr/src/app
 
 CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"]
 
-	["mv", "/etc/dnsmasq.conf", "/etc/dnsmaq.bak"] \
+CMD ["mv", "/etc/dnsmasq.conf", "/etc/dnsmaq.bak"]
 
-	["cp", "hostapd-config", "/etc/hostapd/hostapd.conf"] \
+CMD ["cp", "hostapd-config", "/etc/hostapd/hostapd.conf"]
 
-	["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
+CMD ["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
 
 RUN chmod +x /usr/src/app/app.sh
 
