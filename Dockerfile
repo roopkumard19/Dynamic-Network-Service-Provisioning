@@ -18,7 +18,7 @@ COPY app/ /usr/src/app
 
 CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"]
 
-CMD ["mv", "/etc/dnsmasq.conf", "/etc/dnsmaq.bak"]
+CMD ["mv", "/etc/dnsmasq.conf", "/etc/dnsmasq.bak"]
 
 CMD ["cp", "hostapd-config", "/etc/hostapd/hostapd.conf"]
 

@@ -6,6 +6,7 @@ sleep 2
 ###########Start dnsmasq, modify if required##########
 if [ -z "$(ps -e | grep dnsmasq)" ]
 then
+ echo im here
  dnsmasq
 fi
 ###########

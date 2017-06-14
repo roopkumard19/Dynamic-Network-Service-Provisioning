@@ -1,7 +1,9 @@
 no-resolv
 # Interface to bind to
 interface=wlan0
+bind-interfaces
 dhcp-range=10.0.0.3,10.0.0.20,12h
 server=8.8.8.8
 server=8.8.4.4
-listen-address=127.0.0.1
+bogus-priv
+listen-address=10.0.0.1
