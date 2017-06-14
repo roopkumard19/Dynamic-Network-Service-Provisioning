@@ -12,6 +12,8 @@ RUN apt-get -q update \
 		iptables \
 		psmisc
 
+ENV INITSYSTEM on
+
 WORKDIR /usr/src/app
 
 COPY app/ /usr/src/app
