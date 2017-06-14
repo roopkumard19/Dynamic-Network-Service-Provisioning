@@ -28,4 +28,4 @@ RUN chmod +x /usr/src/app/app.sh
 
 CMD ["/bin/bash"]
 
-CMD ["/usr/src/app/app.sh"]
+CMD ["/usr/src/app/app.sh", "wlan1", "wlan0"]
