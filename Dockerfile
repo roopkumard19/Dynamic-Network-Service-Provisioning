@@ -7,13 +7,15 @@ RUN apt-get -q update \
         	git \
 		hostapd \
 		dnsmasq \
-		openssh-server
+		openssh-server \
+		apt-get install wireless-tools \
+		apt-get install iptables
 
 WORKDIR /usr/src/app
 
 COPY app/ /usr/src/app
 
-CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"] \
+CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"]
 
 	["mv", "/etc/dnsmasq.conf", "/etc/dnsmaq.bak"] \
 
