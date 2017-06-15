@@ -7,27 +7,24 @@ RUN apt-get -q update \
         	git \
 		hostapd \
 		dnsmasq \
-		openssh-server \
 		net-tools \
 		iptables \
 		psmisc
 
 ENV INITSYSTEM on
 
-WORKDIR /usr/src/app
-
 COPY app/ /usr/src/app
+
+CMD ["/bin/bash"]
 
 CMD ["mv", "/etc/hostapd/hostapd.conf", "/etc/hostapd/hostapd.bak"]
 
 CMD ["mv", "/etc/dnsmasq.conf", "/etc/dnsmasq.bak"]
 
-CMD ["cp", "hostapd-config", "/etc/hostapd/hostapd.conf"]
+CMD ["cp", "/usr/src/app/hostapd-config", "/etc/hostapd/hostapd.conf"]
 
-CMD ["cp", "dnsmasq-config", "/etc/dnsmasq.conf"]
+CMD ["cp", "/usr/src/app/dnsmasq-config", "/etc/dnsmasq.conf"]
 
 RUN chmod +x /usr/src/app/app.sh
-
-CMD ["/bin/bash"]
 
 CMD ["/usr/src/app/app.sh", "wlan1", "wlan0"]
