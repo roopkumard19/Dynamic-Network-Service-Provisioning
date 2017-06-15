@@ -1,6 +1,6 @@
 no-resolv
 # Interface to bind to
-interface=wlan0
+interface=wlan1
 bind-interfaces
 dhcp-range=10.0.0.3,10.0.0.20,12h
 server=8.8.8.8
