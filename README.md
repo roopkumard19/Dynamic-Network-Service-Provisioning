@@ -1,1 +1,1 @@
-# raspberry_pi_2_light_dummy_application-master
+# raspberry_pi_3-master
