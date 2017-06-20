@@ -19,9 +19,3 @@ RUN apt-get -q update \
 
 COPY app/ /usr/src/app
 
-RUN cp /usr/src/app/hostapd-config /etc/hostapd/hostapd.conf \
-	
-	&& cp /usr/src/app/dnsmasq-config /etc/dnsmasq.conf
-
-RUN chmod +x /usr/src/app/app.sh
-
