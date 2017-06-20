@@ -15,16 +15,13 @@ RUN apt-get -q update \
 		vim \
 		dbus \
 		python-dbus \
-		rfkill \
-	&& rm -rf /var/lib/apt/lists/*
+		rfkill
 
 COPY app/ /usr/src/app
 
 RUN cp /usr/src/app/hostapd-config /etc/hostapd/hostapd.conf \
 	
-	&& cp /usr/src/app/dnsmasq-config /etc/dnsmasq.conf \
-
-	&& cp /usr/src/app/interfaces /etc/network/interfaces
+	&& cp /usr/src/app/dnsmasq-config /etc/dnsmasq.conf
 
 RUN chmod +x /usr/src/app/app.sh
 
