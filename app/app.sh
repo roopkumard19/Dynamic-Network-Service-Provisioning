@@ -11,3 +11,6 @@ sleep 2
 ifconfig wlan1 up
 
 sleep 5
+
+python ./activate_connection.py resin-hotspot
+
