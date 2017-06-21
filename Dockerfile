@@ -19,3 +19,6 @@ RUN apt-get -q update \
 
 COPY app/ /usr/src/app
 
+RUN chmod +x /usr/src/app/app.sh
+
+CMD ["/usr/src/app/app.sh"]
