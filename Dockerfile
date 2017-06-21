@@ -21,6 +21,6 @@ COPY app/ /usr/src/app
 
 WORKDIR /usr/src/app
 
-RUN chmod +x app.sh
+RUN chmod +x ./app.sh
 
-CMD ["app.sh"]
+CMD ["./app.sh"]
