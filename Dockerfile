@@ -7,18 +7,19 @@ RUN apt-get -q update \
 		wget \
 		python python-dev python-pip python-virtualenv \
 		build-essential  \
-		hostapd \
-		dnsmasq \
 		net-tools \
-		iptables \
-		psmisc \
 		vim \
 		dbus \
 		python-dbus \
-		rfkill
+		git
+
+RUN git clone http://github.com/seveas/python-networkmanager \
+	&& cd python-networkmanager \
+	&& python setup.py install \
+	&& export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 COPY app/ /usr/src/app
 
-RUN chmod +x /usr/src/app/app.sh
+WORKDIR /usr/src/app
 
-CMD ["/usr/src/app/app.sh"]
+RUN python activate_connection.py resin-hotspot

@@ -1,8 +1,0 @@
-no-resolv
-# Interface to bind to
-interface=wlan1
-address=/#/10.0.0.1
-dhcp-range=10.0.0.3,10.0.0.20,12h
-bind-interfaces
-server=8.8.8.8
-server=8.8.4.4
