@@ -6,6 +6,3 @@ sleep 5
 
 python ./activate_connection.py resin-hotspot
 
-sleep 5
-
-reboot now
