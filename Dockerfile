@@ -24,5 +24,3 @@ WORKDIR /usr/src/app
 RUN export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 CMD ["python", "activate_connection.py", "resin-hotspot"]
-
-CMD ["reboot", "now"]
