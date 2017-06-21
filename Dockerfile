@@ -21,5 +21,3 @@ RUN git clone http://github.com/seveas/python-networkmanager \
 COPY app/ /usr/src/app
 
 WORKDIR /usr/src/app
-
-RUN python activate_connection.py resin-hotspot
