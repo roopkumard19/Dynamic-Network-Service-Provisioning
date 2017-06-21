@@ -15,9 +15,12 @@ RUN apt-get -q update \
 
 RUN git clone http://github.com/seveas/python-networkmanager \
 	&& cd python-networkmanager \
-	&& python setup.py install \
-	&& export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+	&& python setup.py install
 
 COPY app/ /usr/src/app
 
 WORKDIR /usr/src/app
+
+RUN export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket \
+	&& python activate_connection.py resin-hotspot
+	&& reboot now
