@@ -25,4 +25,4 @@ RUN export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 CMD ["python", "activate_connection.py", "resin-hotspot"]
 
-RUN reboot now
+CMD ["reboot", "now"]
