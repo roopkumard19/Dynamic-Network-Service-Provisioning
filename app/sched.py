@@ -1,4 +1,4 @@
-import sched, time, os, psutil
+import schedule, time, os, psutil
 
 
 def bytes2human(n):
@@ -25,13 +25,14 @@ def disk_usage(dir):
             % (bytes2human(usage.used), usage.percent) 
 
 
-s = sched.scheduler(time.time, time.sleep)
-def do_something(sc): 
+def job(): 
     #print "Doing stuff..."
     os.system('''speedtest-cli --simple | perl -pe 's/^(.*): (.*) (.*?)(\/s)?\n/$1_$3: $2, /m' | cut -d',' -f 1-3''') 
     print "CPU Percent : ", psutil.cpu_percent()
     print "Disk Usage : ", disk_usage('/')
-    s.enter(2, 1, do_something, (sc,))
 
-s.enter(1, 1, do_something, (s,))
-s.run()
+schedule.every().minutes.do(job)
+
+while True:
+    schedule.run_pending()
+
