@@ -17,8 +17,7 @@ RUN pip install speedtest-cli \
 		psutil \
 		schedule \
 		flask \
-		flask_restful \
-		collections
+		flask_restful
 
 RUN git clone http://github.com/seveas/python-networkmanager \
 	&& cd python-networkmanager \
