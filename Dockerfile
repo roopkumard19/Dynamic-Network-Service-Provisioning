@@ -14,7 +14,8 @@ RUN apt-get -q update \
 		git
 
 RUN pip install speedtest-cli \
-		psutil
+		psutil \
+		schedule
 
 RUN git clone http://github.com/seveas/python-networkmanager \
 	&& cd python-networkmanager \
@@ -27,6 +28,4 @@ WORKDIR /usr/src/app
 RUN chmod +x ./app.sh
 
 CMD ["./app.sh"]
-
-CMD ["python sched.py"]
 
