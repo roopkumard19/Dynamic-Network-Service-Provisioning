@@ -15,7 +15,10 @@ RUN apt-get -q update \
 
 RUN pip install speedtest-cli \
 		psutil \
-		schedule
+		schedule \
+		flask \
+		flask_restful \
+		collections
 
 RUN git clone http://github.com/seveas/python-networkmanager \
 	&& cd python-networkmanager \

@@ -49,11 +49,13 @@ def job():
     
     with open("sending.log", 'a') as file:
         file.write(result + "\n")
-    return flask.send_file('sending.log')
+
+    with open("sending.log", 'r') as file:
+        return flask.Response(file.read(), mimetype='text/plain')
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(host='0.0.0.0', port=80)
     
 #    schedule.every().minutes.do(job)
  #   while True:
