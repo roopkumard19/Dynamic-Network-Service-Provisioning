@@ -32,7 +32,7 @@ def disk_usage(dir):
 @app.route('/')
 
 def job():
-    final = []
+    '''final = []
     final = OrderedDict(final) 
     os.system("speedtest-cli --simple > log.log")
     final['cpu'] = psutil.cpu_percent()
@@ -46,13 +46,13 @@ def job():
                 upload = line.split(" ")
                 final['upload-speed'] = upload[1]
     result = json.dumps(final)
-    
+    '''
+    result = str(psutil.virtual_memory().percent
     with open("sending.log", 'a') as file:
         file.write(result + "\n")
 
     with open("sending.log", 'r') as file:
         return flask.Response(file.read(), mimetype='text/plain')
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
