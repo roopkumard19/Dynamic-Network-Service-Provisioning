@@ -47,7 +47,7 @@ def job():
                 final['upload-speed'] = upload[1]
     result = json.dumps(final)
     '''
-    result = str(psutil.virtual_memory().percent
+    result = str(psutil.virtual_memory().percent)
     with open("sending.log", 'a') as file:
         file.write(result + "\n")
 
