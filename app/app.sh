@@ -12,5 +12,5 @@ ifconfig wlan1 up
 
 sleep 5
 
-python ./activate_connection.py HANDIoTOVER-1
+python ./activate_connection.py handover1
 
